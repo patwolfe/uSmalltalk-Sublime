@@ -1,0 +1,32 @@
+%YAML 1.2
+---
+name: uSmalltalk
+file_extensions: [smt]
+scope: source.smt
+
+contexts:
+  main:
+    - match: "[^ \t]*:"
+      scope: variable.function.smt
+    - match: \b(?:begin|set|return|primitive|block|locals)\b
+      scope: keyword.smt
+    - match: \b(?:class-method|method|)\b
+      scope: keyword.other.smt
+    - match: class
+      scope: support.class.smt
+    - match: \b(?:ivars|subclass-of)\b
+      scope: keyword.class.smt
+    - match: \b(?:self|super)\b
+      scope: keyword.smt
+    - match: "'"
+      push: symbol
+    - match: \b[0-9+]\b
+      scope: constant.numeric
+
+  symbol:
+    - meta_scope: constant.string
+    - match: \s
+      scope: constant.string
+      pop: true
+...
+
