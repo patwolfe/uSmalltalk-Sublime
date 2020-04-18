@@ -22,11 +22,19 @@ contexts:
       push: symbol
     - match: \b[0-9+]\b
       scope: constant.numeric
+	- match: ;;
+	  push: comment
 
   symbol:
     - meta_scope: constant.string
     - match: \s
       scope: constant.string
+      pop: true
+
+  comment:
+    - meta_scope: comment
+    - match: \n
+      scope: comment.line
       pop: true
 ...
 
