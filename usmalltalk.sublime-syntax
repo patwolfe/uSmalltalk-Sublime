@@ -22,8 +22,8 @@ contexts:
       push: symbol
     - match: \b[0-9+]\b
       scope: constant.numeric
-	- match: ;;
-	  push: comment
+    - match: ;;
+      push: comment
 
   symbol:
     - meta_scope: constant.string
