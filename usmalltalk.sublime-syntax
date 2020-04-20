@@ -12,7 +12,7 @@ contexts:
       scope: keyword.smt
     - match: \b(?:class-method|method|)\b
       scope: keyword.other.smt
-    - match: class
+    - match: \bclass\b
       scope: support.class.smt
     - match: \b(?:ivars|subclass-of)\b
       scope: keyword.class.smt
